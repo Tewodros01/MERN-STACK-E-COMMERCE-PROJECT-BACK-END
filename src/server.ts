@@ -3,6 +3,8 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
 import path from "path";
+import socketIO from "socket.io";
+import http from "http";
 import indexRoutes from "./routes/index.route";
 import connectDB from "./config/db.conn";
 import corsOptions from "./config/corsOptions";
@@ -10,6 +12,8 @@ import credentials from "./middleware/credentials";
 
 // Initializations
 const app: express.Application = express();
+const server = http.createServer(app);
+const io = new socketIO.Server(server);
 
 // Handle options credentials check - before CORS!
 // and fetch cookies credentials requirement
@@ -47,6 +51,17 @@ app.all("*", (req, res) => {
   } else {
     res.type("txt").send("404 Not Found");
   }
+});
+
+io.on("connection", (socket) => {
+  console.log("A user connected");
+
+  // Listen for new chat messages
+  socket.on("newMessage", async ({ sender, receiver, content }) => {});
+
+  socket.on("disconnect", () => {
+    console.log("User disconnected");
+  });
 });
 
 (async () => {

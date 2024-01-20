@@ -43,6 +43,7 @@
     "jasmine-ts": "^0.4.0",
     "nodemon": "^3.0.2",
     "prettier": "^3.1.1",
+    "socket.io": "^4.7.4",
     "ts-node": "^10.9.2",
     "tsc-watch": "^6.0.4",
     "typescript": "^5.3.3"

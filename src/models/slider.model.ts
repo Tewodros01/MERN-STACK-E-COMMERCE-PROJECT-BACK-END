@@ -25,6 +25,7 @@ const sliderSchema = new Schema(
         delete ret.__v;
       },
     },
+    timestamps: true,
   },
 );
 

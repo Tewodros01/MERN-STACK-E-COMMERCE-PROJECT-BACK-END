@@ -7,7 +7,7 @@ interface IReviewProduct {
   comment: string;
 }
 
-interface IReviewProductDocument extends Document {
+interface IReviewProductDocument extends Document, IReviewProduct {
   reviewId: string;
 }
 

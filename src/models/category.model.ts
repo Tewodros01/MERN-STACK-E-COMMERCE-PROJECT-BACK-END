@@ -24,7 +24,8 @@ const categorySchema = new Schema<ICategoryDocument>(
         delete ret.__v;
       },
     },
-  }
+    timestamps: true,
+  },
 );
 
 const CategoryModel: Model<ICategoryDocument> =

@@ -35,6 +35,7 @@ const userSchema = new Schema<IUserDocument>(
         delete ret.password;
       },
     },
+    timestamps: true,
   },
 );
 
