@@ -11,7 +11,7 @@ interface IProduct {
   productImagePath?: string;
   productSKU?: string;
   productType: string;
-  stackStatus: boolean;
+  stockStatus: boolean;
 }
 
 interface IProductDocument extends Document, IProduct {
@@ -33,7 +33,7 @@ const productSchema: Schema = new Schema(
     productImagePath: { type: String },
     productSKU: { type: String, required: true },
     productType: { type: String, default: "Simple" },
-    stackStatus: { type: String, default: "IN" },
+    stockStatus: { type: String, default: "IN" },
     relatedProducts: [{ type: Types.ObjectId, ref: "RelatedProduct" }],
   },
   {

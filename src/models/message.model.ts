@@ -4,8 +4,9 @@ interface IMessage {
   sender: string;
   receiver: string;
   content: string;
-  timestamp: Date;
+  timestamp?: Date;
 }
+
 interface IMessageDocument extends Document, IMessage {
   messageId: string;
 }

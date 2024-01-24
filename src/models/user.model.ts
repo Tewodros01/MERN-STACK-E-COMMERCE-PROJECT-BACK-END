@@ -1,11 +1,13 @@
 import mongoose, { Model, Schema, Document } from "mongoose";
 
 interface IUser {
+  username: string;
   fullName: string;
   email: string;
   password: string;
-  username: string;
+  contact: string;
   roles: string[];
+  permissions: string[];
 }
 
 interface IUserDocument extends Document, IUser {
@@ -21,7 +23,9 @@ const userSchema = new Schema<IUserDocument>(
     email: { type: String, required: true },
     password: { type: String, required: true },
     username: { type: String, required: true, unique: true },
+    contact: { type: String, required: true },
     roles: { type: [String], default: ["user"] },
+    permissions: { type: [String], default: [] },
     stripeCustomerId: { type: String },
     token: { type: String },
     refreshToken: [{ type: String }],

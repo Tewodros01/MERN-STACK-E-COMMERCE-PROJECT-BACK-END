@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import reviewProductService from "../services/review.product.service";
 import { IReviewProduct } from "../models/review.product.model";
-import mongoose, { Types } from "mongoose";
+import { Types } from "mongoose";
 
 const reviewProductController = {
   createReview: async (req: Request, res: Response): Promise<void> => {

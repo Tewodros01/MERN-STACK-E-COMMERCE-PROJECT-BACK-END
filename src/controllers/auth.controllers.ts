@@ -16,7 +16,7 @@ const authController = {
       const foundUser = await authService.findUserByUserEmail(email);
 
       if (!foundUser) {
-        return res.sendStatus(401); // Unauthorized
+        return res.sendStatus(401);
       }
 
       const match = await authService.comparePassword(

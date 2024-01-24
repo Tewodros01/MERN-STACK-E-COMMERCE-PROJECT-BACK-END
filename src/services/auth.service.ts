@@ -7,7 +7,7 @@ import { UserModel, IUserDocument } from "../models/user.model";
 dotenv.config();
 const pepper: any = process.env.BCRYPT_PASSWORD;
 const access_token_secret: any = process.env.ACCESS_TOKEN_SECRET;
-const refresh_token_secret: any = process.env.refreshttokenService;
+const refresh_token_secret: any = process.env.REFRESH_TOKEN_SECRET;
 
 const authService = {
   findUserByUserEmail: async (email: string): Promise<IUserDocument | null> => {
