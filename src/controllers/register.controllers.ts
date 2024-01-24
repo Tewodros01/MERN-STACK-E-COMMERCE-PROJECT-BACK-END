@@ -11,6 +11,8 @@ const registerController = {
         email: req.body.email,
         password: req.body.password,
         roles: [],
+        contact: "",
+        permissions: [],
       };
 
       if (
@@ -19,9 +21,9 @@ const registerController = {
         !userData.email ||
         !userData.password
       ) {
-        return res
-          .status(400)
-          .json({ message: "Username and password are required." });
+        return res.status(400).json({
+          message: "fullName , Username , email and password are required.",
+        });
       }
 
       const isDuplicate = await registerService.checkDuplicateUsername(

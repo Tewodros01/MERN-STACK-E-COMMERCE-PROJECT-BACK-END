@@ -1,12 +1,14 @@
 import { Request, Response } from "express";
 import reviewProductService from "../services/review.product.service";
 import { IReviewProduct } from "../models/review.product.model";
+import { Types } from "mongoose";
 
 const reviewProductController = {
   createReview: async (req: Request, res: Response): Promise<void> => {
     try {
+      const userId = new Types.ObjectId(req.params.userID);
       const reviewProduct: IReviewProduct = {
-        user: req.body.user,
+        user: userId,
         product: req.body.product,
         rating: req.body.rating,
         comment: req.body.comment,
