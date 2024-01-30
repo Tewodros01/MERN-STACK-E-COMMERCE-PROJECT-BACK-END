@@ -23,6 +23,9 @@ const registerService = {
       username: userData.username,
       email: userData.email,
       password: hashedPassword,
+      contact: userData.contact,
+      roles: userData.roles,
+      permissions: userData.permissions,
     });
 
     return user.save();

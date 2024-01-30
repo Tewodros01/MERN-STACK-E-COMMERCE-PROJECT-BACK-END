@@ -24,7 +24,6 @@ const procurementSchema: Schema = new Schema(
       {
         product: { type: Types.ObjectId, required: true, ref: "Product" },
         requestedQty: { type: Number, required: true },
-
         suggestedCost: { type: Number, required: true },
       },
     ],

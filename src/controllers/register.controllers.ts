@@ -11,7 +11,7 @@ const registerController = {
         email: req.body.email,
         password: req.body.password,
         roles: [],
-        contact: "",
+        contact: "+251940805426",
         permissions: [],
       };
 
