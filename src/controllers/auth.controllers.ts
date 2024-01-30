@@ -54,6 +54,7 @@ const authController = {
         }
 
         foundUser.refreshToken = [...newRefreshTokenArray, newRefreshToken];
+        foundUser.token = accessToken;
         await foundUser.save();
 
         res.cookie("jwt", newRefreshToken, {
@@ -63,7 +64,7 @@ const authController = {
           maxAge: 24 * 60 * 60 * 1000,
         });
 
-        res.json({ accessToken });
+        res.json({ message: "success", data: foundUser });
       } else {
         res.sendStatus(401);
       }
